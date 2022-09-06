@@ -1,7 +1,7 @@
 //This program replicates the Magic 8-Ball toy from the 50s.
 
 #include <iostream>
-#include <ctime>
+#include <ctime> 
 #include <cstdlib>
 
 int main(){
