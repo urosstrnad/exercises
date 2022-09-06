@@ -1,7 +1,7 @@
 #include <iostream>
 #include <cmath>
 
-// Define tenth_power() here:
+// Define tenth_power()
 int tenth_power(int num) {
 
   int result = 1;
