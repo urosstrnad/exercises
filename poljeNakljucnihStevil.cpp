@@ -323,4 +323,4 @@ int *poljeNakljucnihStevil (int &velikost) {
 
     return poljeStevil;
   
-}
+} 
