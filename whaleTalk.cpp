@@ -14,7 +14,8 @@ int main () {
     sentence = "";
     result.clear();
     std::cout << "Type in the sentence to translate.\nSentence: ";
-    std::cin.ignore();
+    //za vpis celotnega stavka s presledki...
+    std::cin.ignore();                    
     getline(std::cin, sentence);
  
     for (int i = 0; i < sentence.size(); i++) {
