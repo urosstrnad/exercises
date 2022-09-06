@@ -22,7 +22,7 @@ int main (){
   std::string words[5] = {"Rock", "Paper", "Scissors", "Lizard", "Spock"};
   char repeat;
 
-
+ 
 
   do {
       int myChoice;
