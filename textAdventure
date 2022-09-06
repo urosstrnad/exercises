@@ -1,0 +1,141 @@
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+#include <string>
+#include <limits>
+
+int main () {
+
+  srand(time(NULL));
+  int randomNum = rand() % 7 + 1;
+  int guess, tryGuess;
+  char retry;
+
+  do {
+    std::cout << "\033[2J\033[1;1H";
+    char answer;
+
+    //Beginning story line.
+    std::cout << "You are walking down the hill through the woods on a hikers path. You get to an intersection. Do you want to go A) left or B) right? ";
+    std::cin >> answer;
+    
+    //First choice.
+    if (answer == 'A' || answer == 'a') {
+      
+      std::cout << "Great choice. Going right would lead you to your certain death. Why? No one knows, the only known fact is that everyone walking there dies.\n";
+
+    } else if (answer == 'B' || answer == 'b') {
+
+      std::cout << "Wrong choice. You die instantly for unknown, mysterious reasons.\n";
+    } else {
+
+      std::cout << "You died.\n";
+
+    }
+
+    //Clears screen
+    //std::cout << "\033[2J\033[1;1H";
+
+    std::cout << "An indescribably hideous organic blob jumps in front of you while walking down the path and stops you.\n";
+    
+   // std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+
+   // std::cout << "\033[2J\033[1;1H";
+
+    std::cout << "\n      .:::::--::-\n";
+    std::cout << "     ,=$@@@@@##@@#,\n" ;
+    std::cout << "    $@@@@@@@@@@@@@@\n";
+    std::cout << "   -@@@@@@@@@@@@@@@=\n";
+    std::cout << "   #@@@@@@@@@@@@@@@=\n";
+    std::cout << "  *@@@@@@@@@@@@@@@@@:\n";
+    std::cout << " .$@@@@@@@$@@@@@#@@@!\n";
+    std::cout << " ;@@@@!;@* @@@@:;@@@@,\n";
+    std::cout << ".;$@@@, @*=@@@- ;@@@!\n";
+    std::cout << " :@@@:  !:,,#-  :@@@#,\n";
+    std::cout << " ;@@:      ;     =#@=.\n";
+    std::cout << " :@@ ~==;    ;=! ,#@;\n";
+    std::cout << "  =@@;  ~: .!   -# @;\n";
+    std::cout << "  =~  -- !-;!,- ~, #~\n";
+    std::cout << "  -!  ~: !..!-# -,!:\n";
+    std::cout << "   @-:  -:  ~-. . @\n";
+    std::cout << "   # -=$!.=  !$* .\n";
+    std::cout << "   --    !!      =\n";
+    std::cout << "   *    .,      ,\n";
+    std::cout << "    -.  ,     .~\n";
+    std::cout << "    .~,       ;\n";
+    std::cout << "      -      $\n";
+    std::cout << "       ---,,,\n";
+    std::cout << "        -:~-\n";
+    std::cout << "\nIt tells you: \"You cannot continue down this path unless you guess which number from 1 to 7 am I thinking of. If you don't guess after 3 tries, I will eat you. But here's the catch, if you fail after each guess I will tell you if the number is either too big or too small. Tell me your first guess.\" ";
+    //First try
+    std::cin >> guess;
+
+    tryGuess = 1;
+
+    //Second and third try.
+    while (guess != randomNum && tryGuess < 3 ) {
+      
+      if (guess > randomNum) {
+
+        std::cout << "The number is too high.\nTry again: ";
+        std::cin >> guess;
+
+      } else if (guess < randomNum) {
+
+        std::cout << "Tne number is too low.\nTry again: ";
+        std::cin >> guess;
+
+      } else { 
+        std::cout << "You've died. The monster ate you in the while loop!";
+        }
+      
+      tryGuess++;
+
+    }
+
+    if (guess == randomNum) {
+      
+      std::cout << "Congratulations, you have guessed my number " << randomNum << ".\n";
+
+      //Clears screen
+      //std::cout << "\033[2J\033[1;1H";
+
+      std::cout << "You now walk all the way down to the valley. There are three houses you can enter until the poisonous dark kills you. Which one do you enter? A) The 5 star hotel, B) The local farm homestead, C) The hippie commune ";
+      std::cin >> answer;
+
+      //Second choice.
+      switch (answer) {
+
+        case 'A'|'a':
+          std::cout << "You died. It turned out that this place was a whore-house and you've contracted a higly contagious disease just by breathing the same air as the workers there. Better luck next time!\n";
+        break;
+
+        case 'B' | 'b':
+          std::cout << "You survived. It turned out your hard working habits made you an indispensible asset for the farm. The pretty single woman from the farm fell in love with you and you've lived happily ever after ever since. Good job!\n";
+        break;
+
+        case 'C' | 'c':
+          std::cout << "You died. It turned out this commune was a new-age death cult where they performed human sacrifices to satisfy their gods. You were disembowled and nailed to a cross. You were slowly dying and were in a lot of pain before the time of death occured. Better luck next time.\n";
+        break;
+
+        default :
+          std::cout << "You died. Some mysterious force flew into your heart and made it stop beating. Better luck next time.\n";
+
+      }
+
+    } else {
+
+      std::cout << "You've died. The monster ate you in the if loop.";
+
+    }
+
+    std::cout << "Retry game? y/n ";
+    std::cin >> retry;
+
+  } while (retry == 'y' || retry == 'Y');
+
+
+
+
+  return 0;
+}
